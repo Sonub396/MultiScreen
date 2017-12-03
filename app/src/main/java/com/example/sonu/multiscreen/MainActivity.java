@@ -1,16 +1,34 @@
 package com.example.sonu.multiscreen;
 
+import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private String[] places_array;
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (i){
                     case 0:
-                        Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_SHORT).show();
-
+                        Intent numbersintent = new Intent(MainActivity.this, TableActivity.class);
+                        startActivity(numbersintent);
+                        //Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         Toast.makeText(getApplicationContext(),"Nothing",Toast.LENGTH_SHORT).show();
@@ -47,5 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        //Data for table,Table.java contains initialised values(constructor)
+
     }
 }
