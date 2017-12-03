@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MultiScreen</string>
+    //Values for spinner in initial thread initialised
+    +    <string-array name="places_array">
+    +        <item>Neredmet</item>
+    +        <item>Sainikpuri</item>
+    +        <item>R.K Puram</item>
+    +    </string-array>
 </resources>
