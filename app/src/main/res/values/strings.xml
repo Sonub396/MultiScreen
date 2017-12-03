@@ -6,5 +6,10 @@
         <item>Sainikpuri</item>
         <item>R.K Puram</item>
     </string-array>
+    <string name="S.No">S.No</string>
+    <string name="name">Name</string>
+    <string name="item">Item</string>
+    <string name="price">Price</string>
+    <string name="loc">Location</string>
     <string name="title_activity_table">TableActivity</string>
 </resources>
